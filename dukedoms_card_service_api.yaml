@@ -79,3 +79,22 @@ paths:
             type: array
             items:
               type: integer
+
+definitions:
+  SetCardListRequest:
+    type: object
+    properties:
+      gameId:
+        type: integer
+      victoryCards:
+        type: array
+        items:
+          type: integer
+      treasureCards:
+        type: array
+        items:
+          type: integer
+      actionCards:
+        type: array
+        items:
+          type: integer
