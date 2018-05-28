@@ -20,7 +20,7 @@ paths:
           schema:
             $ref: '#/definitions/SetCardListRequest'
       responses:
-        200:
+        202:
           description: game card list set successfully
 
   /getCardList/{gameId}:
@@ -39,6 +39,8 @@ paths:
       responses:
         200:
           description: game card list found successfully
+          schema:
+            $ref: '#/definitions/CardList'
         404:
           description: no game found with that id
 
@@ -52,6 +54,8 @@ paths:
       responses:
         200:
           description: card list returned successfully
+          schema:
+            type: object
 
   /getCards/{cardIds}:
     get:
@@ -119,3 +123,18 @@ definitions:
         type: integer
       victoryPoints:
         type: integer
+  CardList:
+    type: object
+    properties:
+      victoryCards:
+        type: array
+        items:
+          type: integer
+      actionCards:
+        type: array
+        items:
+          type: integer
+      treasureCards:
+        type: array
+        items:
+          type: integer
