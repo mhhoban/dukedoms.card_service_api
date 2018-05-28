@@ -7,7 +7,7 @@ paths:
   /setCardList:
     post:
       summary: set the card list for a given game id
-      x-swagger-router-controller: list_operations
+      x-swagger-router-controller: controllers.list_operations
       operationId: set_card_list
       tags:
         - listOperations
@@ -26,7 +26,7 @@ paths:
   /getCardList/{gameId}:
     get:
       summary: get the card list for a given game
-      x-swagger-router-controller: list_operations
+      x-swagger-router-controller: controllers.list_operations
       operationId: get_card_list
       tags:
         - listOperations
@@ -45,7 +45,7 @@ paths:
   /getCardCatalog:
     get:
       summary: return list of all possible game cards
-      x-swagger-router-controller: card_info
+      x-swagger-router-controller: controllers.card_info
       operationId: get_card_catalog
       tags:
         - cardInfo
@@ -56,8 +56,8 @@ paths:
   /getCards/{cardIds}:
     get:
       summary: get info for specified cards
-      x-swagger-router-controller: card_info
-      operationId: get_cards
+      x-swagger-router-controller: controllers.card_info
+      operationId: get_card_info
       tags:
         - cardInfo
       parameters:
