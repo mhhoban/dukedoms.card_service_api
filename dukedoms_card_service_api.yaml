@@ -49,9 +49,9 @@ paths:
       operationId: get_card_catalog
       tags:
         - cardInfo
-    responses:
-      200:
-        description: card list returned successfully
+      responses:
+        200:
+          description: card list returned successfully
 
   /getCards/{cardIds}:
     get:
@@ -72,7 +72,9 @@ paths:
         200:
           description: card info fetched successfully
           schema:
-            $ref: '#/definitions/RequestedCardInfo'
+            type: array
+            items:
+              $ref: '#/definitions/CardInfo'
         404:
           description: unable to find following card ids
           schema:
@@ -98,3 +100,22 @@ definitions:
         type: array
         items:
           type: integer
+  CardInfo:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      category:
+        type: string
+      type:
+        type: string
+      cost:
+        type: integer
+      actions:
+        type: string
+      value:
+        type: integer
+      victoryPoints:
+        type: integer
